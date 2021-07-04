@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Soccerplayerview
 {
-	public class Menu
+    public class Menu
 	{
 		public static void MainMenu()
 		{
+			Console.Clear();
 			Console.WriteLine("╔════════════════════════════════════════════════╗");
 			Console.WriteLine("║         ==    Main Menu   ==                   ║");
 			Console.WriteLine("║                                                ║");
@@ -22,6 +19,7 @@ namespace Soccerplayerview
 
 		public static void PlayerMenu()
 		{
+			Console.Clear();
 			Console.WriteLine("┌────────────────────────────────────────────────┐");
 			Console.WriteLine("│           --  Player Menu --                   │");
 			Console.WriteLine("│                                                │");
@@ -35,28 +33,27 @@ namespace Soccerplayerview
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 
-		public static void PlayerAddMenu(bool alrealyCsv)
+		public static void PlayerAddMenu(bool alreadyCsv)
 		{
+			Console.Clear();
 			Console.WriteLine("┌────────────────────────────────────────────────┐");
 			Console.WriteLine("│           --  Player Menu --                   │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             a - Add manually                   │");
+			Console.WriteLine("│             m - Add manually                   │");
 			Console.WriteLine("│                                                │");
-			if (!alrealyCsv)
+			if (!alreadyCsv)
 			{
 				Console.WriteLine("│             c - Add from CSV file              │");
 				Console.WriteLine("│                                                │");
 			}
-			Console.WriteLine("│             m - Modify a player                │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             d - Delete a player                │");
-			Console.WriteLine("│                                                │");
+
 			Console.WriteLine("│                                     x - Exit   │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 
 		public static void CountryMenu()
 		{
+			Console.Clear();
 			Console.WriteLine("┌────────────────────────────────────────────────┐");
 			Console.WriteLine("│           --  Country Menu --                  │");
 			Console.WriteLine("│                                                │");
@@ -64,7 +61,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             m - Modifying                      │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             s - Deleting                       │");
+			Console.WriteLine("│             d - Deleting                       │");
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│                                     x - Exit   │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");

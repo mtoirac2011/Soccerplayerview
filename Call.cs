@@ -8,50 +8,99 @@ namespace Soccerplayerview
 {
     class Call
     {
-
+        
         public static void ToPlayer()
         {
-            bool morePlayer;
+            bool alreadyCsv = false;
+            bool exitPlayer;
             string menuPlayer;
             do
             {
-                Console.Clear();
+                
                 Menu.PlayerMenu();
                 menuPlayer = Click.Prompt("Choose the option: ").ToUpper();
-                morePlayer = menuPlayer == "X";
-
+                exitPlayer = menuPlayer == "X";
 
                 switch (menuPlayer)
                 {
                     case "A":
-                        Menu.PlayerAddMenu();
+                        ToAddPlayer();
+                         
+                        
                         break;
 
                     case "M":
-                        Call.ToCountry();
+                        
                         break;
 
                     case "D":
-                        Call.ToCountry();
+                        
                         break;
 
                     default:
                         break;
                 }
 
-            } while (!morePlayer);
+            } while (!exitPlayer);
+        }
+
+        public static void ToAddPlayer()
+        {
+            bool exitAddPlayer;
+            string menuAddPlayer;
+            do
+            {
+                Menu.PlayerAddMenu(General.AlreadyCsv);
+                menuAddPlayer = Click.Prompt("Choose the option: ").ToUpper();
+                exitAddPlayer = menuAddPlayer == "X";
+
+                switch (menuAddPlayer)
+                {
+                    case "A":
+
+                        break;
+
+                    case "C":
+                        General.AlreadyCsv = Player.AddPlayersFromCsv();
+                        break;
+
+                    default:
+
+                        break;
+                }
+
+            } while (!exitAddPlayer);
         }
 
         public static void ToCountry()
         {
-            bool moreCountry;
+            bool exitCountry;
+            string menuCountry;
             do
             {
                 Menu.CountryMenu();
-                moreCountry = Click.Prompt("Choose the option: ").ToUpper() == "X";
-                Console.Clear();
+                menuCountry = Click.Prompt("Choose the option: ").ToUpper();
+                exitCountry = menuCountry == "X";
 
-            } while (!moreCountry);
+                switch (menuCountry)
+                {
+                    case "A":
+                        
+                        break;
+
+                    case "M":
+
+                        break;
+
+                    case "D":
+
+                        break;
+
+                    default:
+                        break;
+                }
+
+            } while (!exitCountry);
         }
 
     }

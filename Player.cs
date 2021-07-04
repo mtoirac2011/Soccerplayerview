@@ -10,10 +10,12 @@ namespace Soccerplayerview
     {
 
         string Team { get; set; }
+        DateTime Since { get; set; }
 
-        public Player(string firstname, string lastname, string country, string team) : base(firstname, lastname, country)
+        public Player(string firstname, string lastname, string country, string team, DateTime since) : base(firstname, lastname, country)
         {
             Team = team;
+            Since = since;
         }
 
         public static void DisplayPlayer()
@@ -41,5 +43,9 @@ namespace Soccerplayerview
             } while (!done);
         }
 
+        public static bool AddPlayersFromCsv()
+        {
+            return true;
+        }
     }
 }

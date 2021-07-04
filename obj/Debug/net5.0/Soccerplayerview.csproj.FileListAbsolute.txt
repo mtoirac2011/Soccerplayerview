@@ -1,0 +1,16 @@
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.csprojAssemblyReference.cache
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.GeneratedMSBuildEditorConfig.editorconfig
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.AssemblyInfoInputs.cache
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.AssemblyInfo.cs
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.csproj.CoreCompileInputs.cache
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.exe
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.deps.json
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.runtimeconfig.json
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.runtimeconfig.dev.json
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.dll
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\ref\Soccerplayerview.dll
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayerview.pdb
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.dll
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\ref\Soccerplayerview.dll
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.pdb
+C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.genruntimeconfig.cache

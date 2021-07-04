@@ -2,19 +2,23 @@
 
 namespace Soccerplayerview
 {
+    
     class Program
     {
+        //public bool alreadyCsv = false;
+
+        
         static void Main(string[] args)
         {
             string mainOption;
-            bool alreadyCsv;
+            General.AlreadyCsv = false;
+
             do
-            {
+            {               
                 mainOption = " ";
                 Menu.MainMenu();
                 mainOption = Click.Prompt("Choose the option: ").ToUpper();
-                Console.Clear();
-
+                
                 switch (mainOption)
                 {
                     case "P":
@@ -30,6 +34,7 @@ namespace Soccerplayerview
                 }
             } while (mainOption != "X");
 
+            Console.Clear();
         }
 
 
