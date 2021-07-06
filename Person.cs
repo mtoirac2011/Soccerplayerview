@@ -8,9 +8,9 @@ namespace Soccerplayerview
 {
     class Person
     {
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string Country { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Country { get; set; }
 
         public Person(string firstName, string lastName, string country)
         {

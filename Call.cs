@@ -11,7 +11,7 @@ namespace Soccerplayerview
         
         public static void ToPlayer()
         {
-            bool alreadyCsv = false;
+            
             bool exitPlayer;
             string menuPlayer;
             do

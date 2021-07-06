@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Soccerplayerview
 {
-    
     class Program
     {
-        //public bool alreadyCsv = false;
-
         
         static void Main(string[] args)
         {
+            //List<Player> players = new List<Player>()
+            //{
+            //    new Player() { FirstName = "Minardo", LastName = "Isla", Country = "USA", Team = "FC Barcelona", Since = System.DateTime.Today },
+            //    new Player() { FirstName = "Jorge", LastName = "Rodriguez", Country = "Cuba", Team = "Milan", Since = System.DateTime.Today },
+            //};
+
             string mainOption;
             General.AlreadyCsv = false;
 

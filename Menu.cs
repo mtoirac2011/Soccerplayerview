@@ -37,7 +37,7 @@ namespace Soccerplayerview
 		{
 			Console.Clear();
 			Console.WriteLine("┌────────────────────────────────────────────────┐");
-			Console.WriteLine("│           --  Player Menu --                   │");
+			Console.WriteLine("│           --  Adding players --                │");
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             m - Add manually                   │");
 			Console.WriteLine("│                                                │");
