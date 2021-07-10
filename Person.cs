@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Soccerplayerview
 {
-    class Person
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Country { get; set; }
 
-        public Person(string firstName, string lastName, string country)
+        public Person(string firstname, string lastname, string country)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            FirstName = firstname;
+            LastName = lastname;
             Country = country;
         }
 

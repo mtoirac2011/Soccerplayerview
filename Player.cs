@@ -7,9 +7,8 @@ using System.IO;
 
 namespace Soccerplayerview
 {
-    class Player : Person
+    public class Player : Person
     {
-
         public string Team { get; set; }
         public DateTime Since { get; set; }
 
@@ -117,7 +116,11 @@ namespace Soccerplayerview
             foreach (var res in result)
             {
                 Console.WriteLine(res);
+               
             }
+
+            General.AlreadyCsv = true;
+  
         }
     }
 }

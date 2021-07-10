@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soccerplayerview
 {
-    public class General
+    class Util
     {
-        public static bool AlreadyCsv { get; set; }
     }
 }
