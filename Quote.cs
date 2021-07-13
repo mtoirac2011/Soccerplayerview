@@ -20,5 +20,13 @@ namespace Soccerplayerview
             }
 
         }
+
+        public static string SearchString(string quote)
+        {
+            string cadena = Prompt.GetString("Choose the string to search: ");
+            string cadenaUpper = cadena.ToUpper();
+             
+            return (quote.ToUpper().Contains(cadena.ToUpper())) ? $"\n\"{cadena}\" exists in the quote" : $"\n\"{cadena}\" does NOT exist in the quote"; 
+        }
     }
 }

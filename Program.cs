@@ -182,17 +182,20 @@ namespace Soccerplayerview
             Console.WriteLine();                                            
             do
             {
+                Console.Clear();
                 Menu.QuoteMenu();
 
                 Console.WriteLine("      ──  You have chosen  ──");
                 Console.WriteLine($"\" {quotes[i-1]} \"");
 
                 quoteMenu = Prompt.GetString("Choose the option: ").ToUpper();
+                //Console.Clear();
 
                 switch (quoteMenu)
                 {
-                    case "A":
-
+                    case "C":
+                        Console.WriteLine($"{Quote.SearchString(quotes[i - 1])}  . Any key to cotinue ...");
+                        Console.ReadKey();
                         break;
 
                     case "M":
@@ -206,7 +209,7 @@ namespace Soccerplayerview
                     default:
                         break;
                 }
-
+                
             } while (quoteMenu != "X");
 
         }

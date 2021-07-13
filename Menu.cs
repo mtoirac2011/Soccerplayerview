@@ -84,11 +84,11 @@ namespace Soccerplayerview
 			//Console.Clear();
 			Console.WriteLine("┌──────────────────────────────────────────────┐"); 
 			Console.WriteLine("│                                              │");
-			Console.WriteLine("│         --  Quote Menu --                    │");
+			Console.WriteLine("│      --  Football Quote Menu --              │");
 			Console.WriteLine("│                                              │");
-			Console.WriteLine("│        c - Check if a char exists in quote   │");
+			Console.WriteLine("│   c - Check if a string exists in the quote  │");
 			Console.WriteLine("│                                              │");
-			Console.WriteLine("│        c - Sorting the quotes                │");
+			Console.WriteLine("│   s - Sorting the quotes                     │");
 			Console.WriteLine("│                                              │");
 			Console.WriteLine("│                                   x - Exit   │");
 			Console.WriteLine("└──────────────────────────────────────────────┘");
