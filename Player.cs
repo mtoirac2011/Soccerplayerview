@@ -37,79 +37,29 @@ namespace Soccerplayerview
             bool done;
             do
             {
-                string playerName = Click.Prompt("What's the name of the player? ");
-                string playerTeam = Click.Prompt("Who's the artist? ");
+                string playerName = Prompt.GetString("What's the name of the player? ");
+                string playerTeam = Prompt.GetString("Who's the artist? ");
 
                 //_players.Add(new Player { PlayerName = playerName, PlayerTeam = playerTeam });
-                done = Click.Prompt("Add another player? (y/n) ").ToLower() != "y";
+                done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";
 
             } while (!done);
         }
 
-        public static bool AddPlayersFromCsv()
+        public static bool AddPlayersFromCsv(string fileContent)
         {
-            //Showing results
-            string currentDir = Directory.GetCurrentDirectory();
-            Console.WriteLine("Current directory Path using --- Directory.GetCurrentDirectory()");
-            Console.WriteLine(currentDir);
-            Console.WriteLine();
-            Console.ReadKey();
-
-            currentDir = "C:\\CODELOU\\Soccerplayerview\\Files\\";
-            DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
-            var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
-
-          
-
-            //Show Current directory Path
-            Console.WriteLine("Current directory Path");
-            Console.WriteLine(currentDir);
-            Console.WriteLine();
-            Console.ReadKey();
-
-            //Show files in current directory
-            var files = currentDirInfo.GetFiles();
-            Console.WriteLine("files in current directory");
-            foreach (var file in files)
-            {
-                Console.WriteLine(file);
-            }
-            Console.WriteLine();
-            Console.ReadKey();
-
-            // Show fileName Path
-            Console.WriteLine("fileName Path");
-            Console.WriteLine(fileName);
-            Console.WriteLine();
-            Console.ReadKey();
-            //End Showing results
-
-            var fileContent = ReadCsv(fileName);
-
-            //Show Csv file content
-            Console.WriteLine("Csv file content");
-            Console.WriteLine(fileContent);
-            Console.WriteLine();
-            Console.ReadKey();
-
             //Show Csv file content By Line
             Console.WriteLine("Csv file content By Line");
-            ReadFileByLine(fileContent);
-            Console.WriteLine();
+            //ReadCsvByLine(fileContent);
+            //Console.WriteLine();
             Console.ReadKey();
 
             return true;
         }
 
-        public static string ReadCsv(string fileName)
-        {
-            using (var reader = new StreamReader(fileName))
-            {
-                return reader.ReadToEnd();
-            }
-        }
+        
 
-        public static void ReadFileByLine(string fileContent)
+        public static void ReadCsvByLine(string fileContent)
         {
             string[] result = fileContent.Split(new char[] { '\r', '\n' });
 

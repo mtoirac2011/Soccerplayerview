@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Soccerplayerview
 {
-    class Click
+    class Prompt
     {
-        //Every user input
-        public static string Prompt(string message)
+        public static string GetString(string message)
         {
-            Console.Write(message);
-            string userInput = Console.ReadLine();
-            Console.WriteLine();
-
+            string userInput = " ";
+            Console.Write("\n" + message );
+            userInput = Console.ReadLine();
             return userInput.Trim();
         }
     }
