@@ -8,6 +8,7 @@ namespace Soccerplayerview
     {
         static void Main(string[] args)
         {
+            
             List<Player> lstPlayer = new List<Player>();
 
             
@@ -163,47 +164,31 @@ namespace Soccerplayerview
         {
             string quoteMenu;
             int i = 1;
-            string[] quotes = new string[] {
-            "Soccer is simple, but it is difficult to play simply", "Your love makes me strong, your hate makes me unstoppable",
-            "I think sometimes the best training is to rest", "Success without honor is the greatest of failures",
-            "There is nothing more dangerous than taking no chances"
-            };
-
+            string[] quotes = Quote.InitializeQuotes();
             Quote.ShowQuotes(quotes);
-
+            i = Quote.selectQuote();
+            Console.WriteLine();     
+            
             do
             {
-                i = Int32.Parse(Prompt.GetString("Choose the quote between 1-5: "));
-                if (i > 5 || i < 1)
-                {
-                    Console.WriteLine("The number must be between 1 and 5 ...");
-                }
-            } while (i > 5 || i < 1);
-            Console.WriteLine();                                            
-            do
-            {
-                Console.Clear();
-                Menu.QuoteMenu();
-
-                Console.WriteLine("      ──  You have chosen  ──");
-                Console.WriteLine($"\" {quotes[i-1]} \"");
-
+                Quote.QuoteChosen(quotes[i - 1]);
                 quoteMenu = Prompt.GetString("Choose the option: ").ToUpper();
-                //Console.Clear();
 
                 switch (quoteMenu)
                 {
                     case "C":
-                        Console.WriteLine($"{Quote.SearchString(quotes[i - 1])}  . Any key to cotinue ...");
+                        Console.Write($"{Quote.SearchString(quotes[i - 1])}  . Any key to cotinue ...");
                         Console.ReadKey();
                         break;
 
-                    case "M":
-
+                    case "O":
+                        Quote.otherQuoteFeatures(quotes[i - 1]);
+                        Console.ReadKey();
                         break;
 
-                    case "D":
-
+                    case "S":
+                        Quote.ShowQuotes(quotes);
+                        i = Quote.selectQuote();
                         break;
 
                     default:

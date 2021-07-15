@@ -88,7 +88,9 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                              │");
 			Console.WriteLine("│   c - Check if a string exists in the quote  │");
 			Console.WriteLine("│                                              │");
-			Console.WriteLine("│   s - Sorting the quotes                     │");
+			Console.WriteLine("│   o - Other features of selected quote       │");
+			Console.WriteLine("│                                              │");
+			Console.WriteLine("│   s - Switch to other quote                  │");
 			Console.WriteLine("│                                              │");
 			Console.WriteLine("│                                   x - Exit   │");
 			Console.WriteLine("└──────────────────────────────────────────────┘");

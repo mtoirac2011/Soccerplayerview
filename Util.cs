@@ -11,34 +11,19 @@ namespace Soccerplayerview
 
         public static string FileName()
         {
-            //Showing results
             string currentDir = Directory.GetCurrentDirectory();
-            Console.WriteLine("Current directory Path using --- Directory.GetCurrentDirectory()");
-            Console.WriteLine(currentDir);
-            Console.WriteLine();
-            Console.ReadKey();
-
-            currentDir = "C:\\CODELOU\\Soccerplayerview\\Files\\";
             DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
             var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
 
-
-
-            //Show Current directory Path
-            Console.WriteLine("Current directory Path");
-            Console.WriteLine(currentDir);
-            Console.WriteLine();
-            Console.ReadKey();
-
             //Show files in current directory
-            var files = currentDirInfo.GetFiles();
-            Console.WriteLine("files in current directory");
-            foreach (var file in files)
-            {
-                Console.WriteLine(file);
-            }
-            Console.WriteLine();
-            Console.ReadKey();
+            //var files = currentDirInfo.GetFiles();
+            //Console.WriteLine("files in current directory ");
+            //foreach (var file in files)
+            //{
+            //    Console.WriteLine(file);
+            //}
+            //Console.WriteLine();
+            //Console.ReadKey();
 
             // Show fileName Path
             Console.WriteLine("fileName Path");
@@ -74,7 +59,9 @@ namespace Soccerplayerview
             string team;
             DateTime since;
 
+            //Player playerAux = new Player();
             List<Player> lstAuxPLayer = new List<Player>();
+
             
             //string[] fileByLines = fileContent.Split(new char[] { '\r', '\n' });
 
@@ -102,25 +89,30 @@ namespace Soccerplayerview
                     switch (j)
                     {
                         case 0:
+                            //playerAux.FirstName = fields[0];
 
                             firstName = fields[0];
                             Console.WriteLine("Valor de firstName: " + firstName);
                             break;
                         case 1:
+                            //playerAux.LastName = fields[1];
                             lastName = fields[1];
                             Console.WriteLine("Valor de lastName: " + lastName);
                             break;
                         case 2:
+                            //playerAux.Country = fields[2];
                             country = fields[2];
                             Console.WriteLine("Valor de country: " + country);
                             break;
                         case 3:
+                            //playerAux.Team = fields[3];
                             team = fields[3];
                             Console.WriteLine("Valor de Team: " + team);
                             break;
                         case 4:
                             try
                             {
+                                //playerAux.Since = DateTime.Parse(fields[4]);
                                 since = DateTime.Parse(fields[4]);
                                 Console.WriteLine("Valor de Since: " + since);
                             }
@@ -135,12 +127,8 @@ namespace Soccerplayerview
                             
                             break;
                     }
-
-                    //Player playerAux = new ()
-
-                    //firstName, lastName, country, team, since);
-                    lstAuxPLayer.Add(playerAux);
-                    
+                   
+                    lstAuxPLayer.Add(playerAux);                    
                 }
 
                 Console.ReadKey();
@@ -170,7 +158,6 @@ namespace Soccerplayerview
         {
             positionOfSearch--;
             string[] recordNotFound = {"Record not found"};
-
             try
             {
                 string[] lines = System.IO.File.ReadAllLines(filePath);
@@ -181,20 +168,15 @@ namespace Soccerplayerview
 
                     for (int f=0; f < fields.Length; f++)
                     {
-
                         Console.WriteLine("Realizar recorrido sub-lista");
                     }
-
-                    Console.ReadKey();
-                    
+                    Console.ReadKey();                    
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: ", ex );
-               
+                Console.WriteLine("Error: ", ex );               
             }
-
             return recordNotFound;
         }
 
