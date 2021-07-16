@@ -11,29 +11,81 @@ namespace Soccerplayerview
     {
         public string Team { get; set; }
         public DateTime Since { get; set; }
-
-        public Player(string firstName, string lastName, string country, string team, DateTime since) : base(firstName, lastName, country)
+      
+        public static void DisplayPlayer(List<Player> lPlayers)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Country = country;
-            Team = team;
-            Since = since;
+            Console.WriteLine("Displaying players");
+            Console.WriteLine("------------------");
+            foreach (var player in lPlayers)
+            {
+                Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
+                Console.WriteLine("\n--------------------------------------------------------------");
+            }
         }
 
-        public static void DisplayPlayer()
+        public static List<Player> LoadListPlayer() 
         {
-            Console.WriteLine("Players");
-            Console.WriteLine("----------");
-            //_players.ForEach((player) => Console.WriteLine(player));
-            Console.WriteLine();
+            
+            List<Player> lstPlayerAux = new();
+            DateTime since;
+            string fileContent;
+
+            string currentDir = Directory.GetCurrentDirectory();
+            DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
+            var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
+
+            using (var reader = new StreamReader(fileName))
+            {
+                 fileContent = reader.ReadToEnd();
+            }
+
+            //string[] Lines = fileContent.Split(new char[] { '\r', '\n' });
+            string[] Lines = System.IO.File.ReadAllLines(fileName);
+
+            for (int i = 1; i < Lines.Length; i++)
+            {
+                Console.WriteLine("Line number = " + i);
+                Console.WriteLine(Lines[i]);
+
+                string[] fields = Lines[i].Split(',');
+
+                Player playerAux = new();
+                
+                playerAux.FirstName = fields[0];
+                Console.WriteLine("playerAux.FirstName value: " + playerAux.FirstName);
+
+                playerAux.LastName = fields[1];
+                Console.WriteLine("playerAux.LastName value: " + playerAux.LastName);
+
+                playerAux.Country = fields[2];
+                Console.WriteLine("playerAux.Country value: " + playerAux.Country);
+
+                playerAux.Team = fields[3];
+                Console.WriteLine("playerAux.Team value: " + playerAux.Team);
+
+                if (DateTime.TryParse(fields[4], out since))
+                {
+                    playerAux.Since = since;
+                }
+                Console.WriteLine("playerAux.Since value: " + playerAux.Since);
+
+                Console.WriteLine("===================>>");
+
+                lstPlayerAux.Add(playerAux);
+
+                Console.ReadKey();
+            }
+
+            General.AlreadyCsv = true;
+            return lstPlayerAux;
         }
 
         /// <summary>
         /// Prompts user for player name and artist and adds a new player.
         /// </summary>
-        public static void AddPlayer()
+        public static Player AddPlayer()
         {
+            Player manualPlayer = new();
             bool done;
             do
             {
@@ -44,6 +96,8 @@ namespace Soccerplayerview
                 done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";
 
             } while (!done);
+
+            return manualPlayer;
         }
 
         public static bool AddPlayersFromCsv(string fileContent)

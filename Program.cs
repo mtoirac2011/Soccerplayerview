@@ -6,16 +6,11 @@ namespace Soccerplayerview
 {
     public class Program
     {
+        private static List<Player> lstPlayer;
         static void Main(string[] args)
-        {
-            
-            List<Player> lstPlayer = new List<Player>();
-
-            
-
+        {            
             string mainMenu;
             General.AlreadyCsv = false;
-
             do
             {
                 mainMenu = " ";
@@ -87,7 +82,6 @@ namespace Soccerplayerview
         // Menu Player Add SubMenu
         static void GoPlayerAddMenu()
         {
-            List<Player> lstCsvByLine = new List<Player>();
             string playerAddMenu;
            do
            {
@@ -97,27 +91,30 @@ namespace Soccerplayerview
                { 
                 
                    case "M":
-                       
+                        Player manualPlayer = new();
+                        lstPlayer.Add(Player.AddPlayer());
                         break;
 
                    case "C":
-                        string CsvPathName = Util.FileName();
-                        string CsvContent = Util.ReadCsv(CsvPathName);
-                        //lstCsvByLine = Util.ReadCsvByLine(CsvContent);
+                        
 
-                        lstCsvByLine = Util.ReadCsvByLine(CsvPathName);
-
-                        Console.WriteLine("Mostrando Lista completa: lstCsvByLine \n ");
-                        Console.WriteLine(lstCsvByLine);
-
-                        Console.WriteLine("Mostrando Lista arreglo string \n");
-
-                        foreach (var line in lstCsvByLine)
+                        if (!General.AlreadyCsv)
                         {
-                            Console.WriteLine(line);
-                        }
-                        Console.ReadLine();
 
+                            //if (!lstPlayer.Any())
+                            //{
+                            //    lstPlayer = Player.LoadListPlayer();
+                            //}
+                            //else
+                            //{
+                            //    List<Player> lstPlayerLoaded = Player.LoadListPlayer();
+                            //    //lstPlayer = manualPlayer.Union(lstPlayerLoaded);
+                            //}
+
+                            lstPlayer = Player.LoadListPlayer();
+                            Player.DisplayPlayer(lstPlayer);
+                            Console.ReadKey();
+                        }
                         break;
 
                    default:

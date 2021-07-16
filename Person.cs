@@ -12,12 +12,12 @@ namespace Soccerplayerview
         public string LastName { get; set; }
         public string Country { get; set; }
 
-        public Person(string firstname, string lastname, string country)
-        {
-            FirstName = firstname;
-            LastName = lastname;
-            Country = country;
-        }
+        //public Person(string firstname, string lastname, string country)
+        //{
+        //    FirstName = firstname;
+        //    LastName = lastname;
+        //    Country = country;
+        //}
 
     }
 }
