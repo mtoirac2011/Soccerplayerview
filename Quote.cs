@@ -14,7 +14,10 @@ namespace Soccerplayerview
             return new string[] {
                                 "Soccer is simple, but it is difficult to play simply", "Your love makes me strong, your hate makes me unstoppable",
                                 "I think sometimes the best training is to rest", "Success without honor is the greatest of failures",
-                                "There is nothing more dangerous than taking no chances"
+                                "There is nothing more dangerous than taking no chances", "Talent without working hard is nothing",
+                                "Enthusiasm is everything. It must be taut and vibrating like a guitar string",
+                                "If you are a goalkeeper, it doesn't matter what you save the ball with - if you keep it out, it's not a goal",
+                                "In soccer, the worst blindness is only seeing the ball", "My mother thinks I am the best. And I was raised to always believe what my mother tells me"
             };
         }
 
@@ -59,17 +62,20 @@ namespace Soccerplayerview
         }
 
         public static int selectQuote()
-        {
-            int i;
+        {            
+            int i = 0;
+            int j = 0;
+            string[] quotes = Quote.InitializeQuotes();
             do
             {
-                i = Int32.Parse(Prompt.GetString("Choose the quote between 1-5: "));
-                if (i > 5 || i < 1)
+                string s = Prompt.GetString($"Choose a quote between 1-{quotes.Length}: ");
+                if (Int32.TryParse(s, out j))
                 {
-                    Console.WriteLine("The number must be between 1 and 5 ...\n");
+                    i = j;
                 }
-            } while (i > 5 || i < 1);
 
+
+            } while (i > quotes.Length || i < 1);
             return i;
         }
     }

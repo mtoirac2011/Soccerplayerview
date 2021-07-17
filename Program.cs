@@ -24,10 +24,6 @@ namespace Soccerplayerview
                         GoPlayer();
                         break;
 
-                    case "C":
-                        GoCountry();
-                        break;
-
                     case "Q":
                         GoQuote();
                         break;
@@ -138,37 +134,6 @@ namespace Soccerplayerview
             }
         }
 
-        // Menu Country //
-        static void GoCountry()
-        {           
-            string countryMenu;
-            do
-            {
-                Menu.CountryMenu();
-                countryMenu = Prompt.GetString("Choose the option: ").ToUpper();
-
-                switch (countryMenu)
-                {
-                    case "A":
-
-                        break;
-
-                    case "M":
-
-                        break;
-
-                    case "D":
-
-                        break;
-
-                    default:
-                        break;
-                }
-
-            } while (countryMenu != "X");
-
-        }
-
         // Menu Quote // 
         static void GoQuote()
         {
@@ -221,19 +186,32 @@ namespace Soccerplayerview
                 switch (reportMenu)
                 {
                     case "P":
-
+                        if (General.AlreadyCsv)
+                        {
+                            Player.DisplayPlayer(lstPlayer);
+                            Util.anyKeyToContinue();
+                        }
+                        else
+                        {
+                            Console.Write("\nThis list is empty, please add players from CSV file in Player Menu. Any key to continue...");
+                            Console.ReadKey();
+                        }
+                        
                         break;
 
-                    case "C":
-
+                    case "Q":
+                        string[] quotes = Quote.InitializeQuotes();
+                        Quote.ShowQuotes(quotes);
+                        Util.anyKeyToContinue();
                         break;
 
                     default:
                         break;
                 }
+                
 
             } while (reportMenu != "X");
-
+            
         }
     }
 }

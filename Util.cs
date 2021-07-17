@@ -40,6 +40,11 @@ namespace Soccerplayerview
             }
         }
 
+        public static void anyKeyToContinue()
+        {
+            Console.WriteLine($"\nAny key to continue...");
+            Console.ReadKey();
+        }
 
         public static void AddRecord(string campo1, string campo2, string fileNamePath)
         {

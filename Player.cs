@@ -14,8 +14,8 @@ namespace Soccerplayerview
       
         public static void DisplayPlayer(List<Player> lPlayers)
         {
-            Console.WriteLine("\nUpdating list of players");
-            Console.WriteLine("------------------");
+            Console.WriteLine("\nList of players");
+            Console.WriteLine("-----------------");
             foreach (var player in lPlayers)
             {
                 Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");

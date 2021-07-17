@@ -14,8 +14,6 @@ namespace Soccerplayerview
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             p - Players                        ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║             c - Countries                      ║");
-			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             q - Soccer quotes                  ║");
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             r - Reporting                      ║");
@@ -66,24 +64,6 @@ namespace Soccerplayerview
 		}
 
 		
-		// Country Menu
-		public static void CountryMenu()
-		{
-			Console.Clear();
-			Console.WriteLine("┌────────────────────────────────────────────────┐");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│           --  Country Menu --                  │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             a - Adding                         │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             m - Modifying                      │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             d - Deleting                       │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             x - Exit                           │");
-			Console.WriteLine("└────────────────────────────────────────────────┘");
-		}
-
 		// Quote Menu
 		public static void QuoteMenu()
 		{
@@ -112,7 +92,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             p - List players                   │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             c - List Countries                 │");
+			Console.WriteLine("│             q - List soccer quotes             │");
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             x - Exit                           │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
