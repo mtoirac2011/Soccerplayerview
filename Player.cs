@@ -14,13 +14,37 @@ namespace Soccerplayerview
       
         public static void DisplayPlayer(List<Player> lPlayers)
         {
-            Console.WriteLine("Displaying players");
+            Console.WriteLine("\nUpdating list of players");
             Console.WriteLine("------------------");
             foreach (var player in lPlayers)
             {
                 Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
                 Console.WriteLine("\n--------------------------------------------------------------");
             }
+        }
+
+        public static int DisplayPlayerForDelete(List<Player> lPlayers)
+        {
+            int i = 1;
+            Console.WriteLine("Displaying players for delete");
+            Console.WriteLine("-----------------------------");
+            foreach (var player in lPlayers)
+            {
+                Console.Write("Item: <" + i + ">\n" + player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
+                Console.WriteLine("\n--------------------------------------------------------------");
+                i++;    
+            }
+
+            string input = Prompt.GetString($"Select an item to delete from 1 to {i-1}: ").ToUpper();
+            if(int.TryParse(input, out i))
+            {
+                return i;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
         public static List<Player> LoadListPlayer() 

@@ -53,23 +53,17 @@ namespace Soccerplayerview
             string playerMenu;
             do
             {
-                Menu.PlayerMenu();
+                Menu.PlayerMenu(General.AlreadyCsv);
                 playerMenu = Prompt.GetString("Choose the option: ").ToUpper();
 
                 switch (playerMenu)
                 {
                     case "A":
                         GoPlayerAddMenu();
-
-
-                        break;
-
-                    case "M":
-
                         break;
 
                     case "D":
-
+                        GoPlayerDeleteMenu();
                         break;
 
                     default:
@@ -93,39 +87,17 @@ namespace Soccerplayerview
                 
                    case "M":
                         bool done;
-                        
                         do
                         {
-                            //Player auxPlayer = new();
-                            //auxPlayer = Player.AddPlayer();
                             lstPlayer.Add(Player.AddPlayer());
-                            //Console.WriteLine("Imprimiendo valor de auxPlayer = Player.AddPlayer() ");
-                            //Console.WriteLine($"auxPlayer.Since: {auxPlayer.Since}");
-                            //Console.ReadKey();
-
-                            //lstPlayer.Add(auxPlayer);
                             Player.DisplayPlayer(lstPlayer);
                             done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";                            
                         } while (!done);
-                        //Console.ReadKey();
                         break;
 
-                    case "C":
-                        
-
+                    case "C":                     
                         if (!General.AlreadyCsv)
                         {
-
-                            //if (!lstPlayer.Any())
-                            //{
-                            //    lstPlayer = Player.LoadListPlayer();
-                            //}
-                            //else
-                            //{
-                            //    List<Player> lstPlayerLoaded = Player.LoadListPlayer();
-                            //    //lstPlayer = manualPlayer.Union(lstPlayerLoaded);
-                            //}
-
                             lstPlayer = Player.LoadListPlayer();
                             Player.DisplayPlayer(lstPlayer);
                             Console.ReadKey();
@@ -138,6 +110,32 @@ namespace Soccerplayerview
                }
 
            }while (playerAddMenu != "X");
+        }
+
+        public static void GoPlayerDeleteMenu()
+        {
+            int index = Player.DisplayPlayerForDelete(lstPlayer);
+            if (index > 0)
+            {
+                string playerToBeDelete =$"{lstPlayer[index - 1].FirstName }{lstPlayer[index - 1].LastName}";
+                Console.WriteLine("\nThis player has been selected to be deleted");
+                Console.WriteLine($"{lstPlayer[index - 1].FirstName} {lstPlayer[index - 1].LastName} from {lstPlayer[index - 1].Team}");
+                string option = Prompt.GetString("\nAre you sure? (y/n) ").ToUpper();
+                if (option == "Y")
+                {
+                    try
+                    {
+                        lstPlayer.RemoveAt(index - 1);
+                        Player.DisplayPlayer(lstPlayer);
+                        Console.WriteLine($"\n{playerToBeDelete} successfully deleted. Any key to continue....");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"\nError deleting {playerToBeDelete}" + ex + "/nAny key to continue...");
+                    }
+                    Console.ReadKey();
+                } 
+            }
         }
 
         // Menu Country //

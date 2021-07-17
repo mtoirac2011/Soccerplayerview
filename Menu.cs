@@ -16,14 +16,15 @@ namespace Soccerplayerview
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             c - Countries                      ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║             q - Quotes                         ║");
+			Console.WriteLine("║             q - Soccer quotes                  ║");
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             r - Reporting                      ║");
-			Console.WriteLine("║                                     x - Exit   ║");
+			Console.WriteLine("║                                                ║");
+			Console.WriteLine("║             x - Exit                           ║");
 			Console.WriteLine("╚════════════════════════════════════════════════╝");
 		}
 
-		public static void PlayerMenu()
+		public static void PlayerMenu(bool alreadyCsv)
 		{
 			Console.Clear();
 			Console.WriteLine("┌────────────────────────────────────────────────┐");
@@ -31,12 +32,14 @@ namespace Soccerplayerview
 			Console.WriteLine("│           --  Player Menu --                   │");
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             a - Add new player                 │");
+			if (alreadyCsv)
+            {
+				Console.WriteLine("│                                                │");
+				Console.WriteLine("│             d - Delete a player                │");
+
+			}			
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             m - Modify a player                │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             d - Delete a player                │");
-			Console.WriteLine("│                                                │");
-			Console.WriteLine("│                                     x - Exit   │");
+			Console.WriteLine("│             x - Exit                           │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 
@@ -47,15 +50,18 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│           --  Adding players --                │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             m - Add manually                   │");
-			Console.WriteLine("│                                                │");
+	
 			if (!alreadyCsv)
 			{
-				Console.WriteLine("│             c - Add from CSV file              │");
+				Console.WriteLine("│             c - Load players from CSV file     │");
+				Console.WriteLine("│                                                │");
+            }
+            else
+            {
+				Console.WriteLine("│             m - Add player manually            │");
 				Console.WriteLine("│                                                │");
 			}
-
-			Console.WriteLine("│                                     x - Exit   │");
+			Console.WriteLine("│             x - Exit                           │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 
@@ -74,7 +80,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             d - Deleting                       │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│                                     x - Exit   │");
+			Console.WriteLine("│             x - Exit                           │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 
@@ -92,7 +98,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                              │");
 			Console.WriteLine("│   s - Switch to other quote                  │");
 			Console.WriteLine("│                                              │");
-			Console.WriteLine("│                                   x - Exit   │");
+			Console.WriteLine("│   x - Exit                                   │");
 			Console.WriteLine("└──────────────────────────────────────────────┘");
 		}
 
@@ -108,7 +114,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│             c - List Countries                 │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│                                     x - Exit   │");
+			Console.WriteLine("│             x - Exit                           │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 	}
