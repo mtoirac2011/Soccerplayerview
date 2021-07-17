@@ -83,7 +83,8 @@ namespace Soccerplayerview
         static void GoPlayerAddMenu()
         {
             string playerAddMenu;
-           do
+            
+            do
            {
                Menu.PlayerAddMenu(General.AlreadyCsv);
                playerAddMenu = Prompt.GetString("Choose the option: ").ToUpper();
@@ -91,11 +92,25 @@ namespace Soccerplayerview
                { 
                 
                    case "M":
-                        Player manualPlayer = new();
-                        lstPlayer.Add(Player.AddPlayer());
+                        bool done;
+                        
+                        do
+                        {
+                            //Player auxPlayer = new();
+                            //auxPlayer = Player.AddPlayer();
+                            lstPlayer.Add(Player.AddPlayer());
+                            //Console.WriteLine("Imprimiendo valor de auxPlayer = Player.AddPlayer() ");
+                            //Console.WriteLine($"auxPlayer.Since: {auxPlayer.Since}");
+                            //Console.ReadKey();
+
+                            //lstPlayer.Add(auxPlayer);
+                            Player.DisplayPlayer(lstPlayer);
+                            done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";                            
+                        } while (!done);
+                        //Console.ReadKey();
                         break;
 
-                   case "C":
+                    case "C":
                         
 
                         if (!General.AlreadyCsv)

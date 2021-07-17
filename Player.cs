@@ -84,47 +84,52 @@ namespace Soccerplayerview
         /// Prompts user for player name and artist and adds a new player.
         /// </summary>
         public static Player AddPlayer()
-        {
-            Player manualPlayer = new();
-            bool done;
-            do
+        {    
+            Player manualPlayer = new Player();
+            DateTime since;
+
+            Console.WriteLine("Type the following info for player");
+            Console.WriteLine("==================================");
+            
+            manualPlayer.FirstName = Prompt.GetString("First name: ");
+            manualPlayer.LastName = Prompt.GetString("Last name: ");
+            manualPlayer.Country = Prompt.GetString("Country: ");
+            manualPlayer.Team = Prompt.GetString("Soccer team: ");
+            string input = Prompt.GetString("DOB mm/dd/yyyy: ");
+
+            if (DateTime.TryParse(input, out since))
             {
-                string playerName = Prompt.GetString("What's the name of the player? ");
-                string playerTeam = Prompt.GetString("Who's the artist? ");
-
-                //_players.Add(new Player { PlayerName = playerName, PlayerTeam = playerTeam });
-                done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";
-
-            } while (!done);
+                manualPlayer.Since = since;
+            }
 
             return manualPlayer;
         }
 
-        public static bool AddPlayersFromCsv(string fileContent)
-        {
-            //Show Csv file content By Line
-            Console.WriteLine("Csv file content By Line");
-            //ReadCsvByLine(fileContent);
-            //Console.WriteLine();
-            Console.ReadKey();
+        //public static bool AddPlayersFromCsv(string fileContent)
+        //{
+        //    //Show Csv file content By Line
+        //    Console.WriteLine("Csv file content By Line");
+        //    //ReadCsvByLine(fileContent);
+        //    //Console.WriteLine();
+        //    Console.ReadKey();
 
-            return true;
-        }
+        //    return true;
+        //}
 
-        
 
-        public static void ReadCsvByLine(string fileContent)
-        {
-            string[] result = fileContent.Split(new char[] { '\r', '\n' });
 
-            foreach (var res in result)
-            {
-                Console.WriteLine(res);
-               
-            }
+        //public static void ReadCsvByLine(string fileContent)
+        //{
+        //    string[] result = fileContent.Split(new char[] { '\r', '\n' });
 
-            General.AlreadyCsv = true;
-  
-        }
+        //    foreach (var res in result)
+        //    {
+        //        Console.WriteLine(res);
+
+        //    }
+
+        //    General.AlreadyCsv = true;
+
+        //}
     }
 }
