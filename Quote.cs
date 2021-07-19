@@ -29,7 +29,7 @@ namespace Soccerplayerview
             Console.WriteLine($"\" {phrase} \"");
         }
 
-        public static void ShowQuotes(string[] quotes)
+        public static void DisplayQuotes(string[] quotes)
         {
 
             Console.WriteLine("\n Inspirational Soccer Quotes");
@@ -37,6 +37,17 @@ namespace Soccerplayerview
             for (int i = 0; i < quotes.Length; i++)
             {
                 Console.WriteLine($"< {i + 1} > {quotes[i]}");
+            }
+
+        }
+
+        public static void DisplayQuotesWithFormat(string[] quotes)
+        {
+            Console.WriteLine("\n  Inspirational Soccer Quotes");
+            Console.WriteLine("───────────────────────────────");
+            for (int i = 0; i < quotes.Length; i++)
+            {
+                Console.WriteLine($"{quotes[i]}");
             }
 
         }

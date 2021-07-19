@@ -86,7 +86,7 @@ namespace Soccerplayerview
                         do
                         {
                             lstPlayer.Add(Player.AddPlayer());
-                            Player.DisplayPlayer(lstPlayer);
+                            Player.DisplayPlayers(lstPlayer);
                             done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";                            
                         } while (!done);
                         break;
@@ -95,7 +95,7 @@ namespace Soccerplayerview
                         if (!General.AlreadyCsv)
                         {
                             lstPlayer = Player.LoadListPlayer();
-                            Player.DisplayPlayer(lstPlayer);
+                            Player.DisplayPlayers(lstPlayer);
                             Console.ReadKey();
                         }
                         break;
@@ -122,7 +122,7 @@ namespace Soccerplayerview
                     try
                     {
                         lstPlayer.RemoveAt(index - 1);
-                        Player.DisplayPlayer(lstPlayer);
+                        Player.DisplayPlayers(lstPlayer);
                         Console.WriteLine($"\n{playerToBeDelete} successfully deleted. Any key to continue....");
                     }
                     catch (Exception ex)
@@ -140,7 +140,7 @@ namespace Soccerplayerview
             string quoteMenu;
             int i = 1;
             string[] quotes = Quote.InitializeQuotes();
-            Quote.ShowQuotes(quotes);
+            Quote.DisplayQuotes(quotes);
             i = Quote.selectQuote();
             Console.WriteLine();     
             
@@ -162,7 +162,7 @@ namespace Soccerplayerview
                         break;
 
                     case "S":
-                        Quote.ShowQuotes(quotes);
+                        Quote.DisplayQuotes(quotes);
                         i = Quote.selectQuote();
                         break;
 
@@ -182,13 +182,14 @@ namespace Soccerplayerview
             {
                 Menu.ReportMenu();
                 reportMenu = Prompt.GetString("Choose the option: ").ToUpper();
-                Console.WriteLine();
+                //Console.WriteLine();
+                Console.Clear();
                 switch (reportMenu)
                 {
                     case "P":
                         if (General.AlreadyCsv)
                         {
-                            Player.DisplayPlayer(lstPlayer);
+                            Player.DisplayPlayersWithFormat(lstPlayer);
                             Util.anyKeyToContinue();
                         }
                         else
@@ -201,7 +202,7 @@ namespace Soccerplayerview
 
                     case "Q":
                         string[] quotes = Quote.InitializeQuotes();
-                        Quote.ShowQuotes(quotes);
+                        Quote.DisplayQuotesWithFormat(quotes);
                         Util.anyKeyToContinue();
                         break;
 

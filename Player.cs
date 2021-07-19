@@ -12,7 +12,7 @@ namespace Soccerplayerview
         public string Team { get; set; }
         public DateTime Since { get; set; }
       
-        public static void DisplayPlayer(List<Player> lPlayers)
+        public static void DisplayPlayers(List<Player> lPlayers)
         {
             Console.WriteLine("\nList of players");
             Console.WriteLine("-----------------");
@@ -20,6 +20,28 @@ namespace Soccerplayerview
             {
                 Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
                 Console.WriteLine("\n--------------------------------------------------------------");
+            }
+        }
+
+        public static void DisplayPlayersWithFormat(List<Player> lPlayers)
+        {
+            int age = 0;
+            string fullName;
+            Console.WriteLine("\n          List of players with age");
+            Console.WriteLine("          --------------------------\n");
+            Console.WriteLine("Fullname               Country      Soccer Team        Age");
+            Console.WriteLine("---------------------- ------------ ------------------ ---");
+            foreach (var player in lPlayers)
+            {
+                age = DateTime.Now.Year - player.Since.Year;
+                fullName = player.FirstName + " " + player.LastName;
+
+                if (DateTime.Now.DayOfYear < player.Since.DayOfYear)
+                    age = age - 1;
+
+                Console.WriteLine(fullName.PadRight(22) + " "+ player.Country.PadRight(12) + " " + player.Team.PadRight(18) + "  " + age);
+                
+                //Console.WriteLine("\n--------------------------------------------------------------");
             }
         }
 
