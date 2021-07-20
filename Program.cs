@@ -11,6 +11,7 @@ namespace Soccerplayerview
         {            
             string mainMenu;
             General.AlreadyCsv = false;
+            General.LogFile = Util.SetFileName("Soccerlog.txt");
             do
             {
                 mainMenu = " ";
@@ -85,7 +86,16 @@ namespace Soccerplayerview
                         bool done;
                         do
                         {
-                            lstPlayer.Add(Player.AddPlayer());
+                            try
+                            {
+                                lstPlayer.Add(Player.AddPlayer());
+                                Util.WriteInLog(General.LogFile, "A new player has been added");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("The player could not been added..." + ex);
+                            }
+                            
                             Player.DisplayPlayers(lstPlayer);
                             done = Prompt.GetString("Add another player? (y/n) ").ToUpper() != "Y";                            
                         } while (!done);
@@ -122,6 +132,7 @@ namespace Soccerplayerview
                     try
                     {
                         lstPlayer.RemoveAt(index - 1);
+                        Util.WriteInLog(General.LogFile, "A player has been successfully deleted");
                         Player.DisplayPlayers(lstPlayer);
                         Console.WriteLine($"\n{playerToBeDelete} successfully deleted. Any key to continue....");
                     }

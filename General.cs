@@ -9,5 +9,6 @@ namespace Soccerplayerview
     public class General
     {
         public static bool AlreadyCsv { get; set; }
+        public static string LogFile { get; set; } 
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Linq;
-
 
 namespace Soccerplayerview
 {
@@ -46,6 +44,40 @@ namespace Soccerplayerview
             Console.ReadKey();
         }
 
+        public static string SetFileName(string nameOfFile)
+        {
+            string currentDir = Directory.GetCurrentDirectory();
+            DirectoryInfo currentDirInfo = new(currentDir);
+            var fullname = Path.Combine(currentDirInfo.FullName, nameOfFile);
+
+            return fullname;
+        }
+
+        public static void WriteInLog(string fileNamePath, string msgToWrite)
+        {
+            DateTime date1 = DateTime.Now;
+
+            try
+            {
+                string dateTimeString = date1.ToString("G", DateTimeFormatInfo.InvariantInfo);
+                using (StreamWriter file = new StreamWriter(fileNamePath, true))
+                {
+                    file.WriteLine(dateTimeString + "," + msgToWrite);
+                }
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine("Error converting datatime to string" + ex);
+            }
+
+        }
+
+
+
+
+
+
+        // /////////////////////////////////////
         public static void AddRecord(string campo1, string campo2, string fileNamePath)
         {
             try

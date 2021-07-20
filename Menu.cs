@@ -16,7 +16,7 @@ namespace Soccerplayerview
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             q - Soccer quotes                  ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║             r - Reporting                      ║");
+			Console.WriteLine("║             r - Report Menu                    ║");
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             x - Exit                           ║");
 			Console.WriteLine("╚════════════════════════════════════════════════╝");

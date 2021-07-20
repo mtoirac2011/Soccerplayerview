@@ -69,6 +69,7 @@ namespace Soccerplayerview
             
         }
 
+        
         public static List<Player> LoadListPlayer() 
         {
             
@@ -76,9 +77,11 @@ namespace Soccerplayerview
             DateTime since;
             string fileContent;
 
-            string currentDir = Directory.GetCurrentDirectory();
-            DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
-            var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
+            //string currentDir = Directory.GetCurrentDirectory();
+            //DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
+
+            //var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
+            string fileName = Util.SetFileName("Soccerplayers.csv");
 
             using (var reader = new StreamReader(fileName))
             {
@@ -147,35 +150,14 @@ namespace Soccerplayerview
             {
                 manualPlayer.Since = since;
             }
+            else
+            {
+                throw new Exception("Error converting data...");
+            }
 
             return manualPlayer;
         }
 
-        //public static bool AddPlayersFromCsv(string fileContent)
-        //{
-        //    //Show Csv file content By Line
-        //    Console.WriteLine("Csv file content By Line");
-        //    //ReadCsvByLine(fileContent);
-        //    //Console.WriteLine();
-        //    Console.ReadKey();
-
-        //    return true;
-        //}
-
-
-
-        //public static void ReadCsvByLine(string fileContent)
-        //{
-        //    string[] result = fileContent.Split(new char[] { '\r', '\n' });
-
-        //    foreach (var res in result)
-        //    {
-        //        Console.WriteLine(res);
-
-        //    }
-
-        //    General.AlreadyCsv = true;
-
-        //}
+        
     }
 }
