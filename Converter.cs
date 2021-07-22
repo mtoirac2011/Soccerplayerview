@@ -5,11 +5,11 @@ namespace Soccerplayerview
 {
     public class Converter
     {
-        public string ValueToConvert { get; set; }
+        public string X { get; set; }
 
-        public Converter (string valueToConvert)
+        public Converter (string x)
         {
-            ValueToConvert = valueToConvert;
+            X = x;
         }
 
         public static string FarToCelcious(double value)
@@ -31,7 +31,7 @@ namespace Soccerplayerview
 
         public static string MeterToCm(double value)
         {
-            return (value * 100).ToString();
+            return (value * 100).ToString("N2");
         }
 
         public static void DisplayConvertion(double value1)

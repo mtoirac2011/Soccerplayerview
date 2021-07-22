@@ -233,7 +233,7 @@ namespace Soccerplayerview
         public static void GoConverter()
         {
             Converter.ConverterTitle();
-            double param, stringToDouble;
+            double param, stringToDouble;            
             string input = Prompt.GetString("Type the value to convert: ");
             if (double.TryParse(input, out param))
             {
@@ -242,7 +242,7 @@ namespace Soccerplayerview
             }
             else
             {
-                Console.WriteLine("Error convertin string to double: ");
+                Console.WriteLine("Error converting string to double: ");
             }
 
             Util.anyKeyToContinue();
