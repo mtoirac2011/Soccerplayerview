@@ -1,5 +1,0 @@
-
-07/19/2021,A new player has been added
-07/19/2021,A player has been successfully deleted
-07/19/2021 21:02,A new player has been added
-07/19/2021 21:03,A player has been successfully deleted

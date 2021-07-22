@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Soccerplayerview
 {
@@ -14,7 +13,7 @@ namespace Soccerplayerview
             General.LogFile = Util.SetFileName("Soccerlog.txt");
             do
             {
-                mainMenu = " ";
+                mainMenu = "X";
                 Menu.MainMenu();
                 mainMenu = Prompt.GetString("Choose the option: ").ToUpper();
 
@@ -33,15 +32,19 @@ namespace Soccerplayerview
                         GoReport();
                         break;
 
+                    case "C":
+                        GoConverter();
+                        
+                        break;
+
                     default:
+                        Console.WriteLine("Closing the application...");
                         break;
                 }
-
+                Console.Clear();
 
             } while (mainMenu != "X");
-
-            Console.Clear();
-
+            
         }
 
         // Menu Player  //
@@ -64,6 +67,7 @@ namespace Soccerplayerview
                         break;
 
                     default:
+                        
                         break;
                 }
 
@@ -123,9 +127,9 @@ namespace Soccerplayerview
             int index = Player.DisplayPlayerForDelete(lstPlayer);
             if (index > 0)
             {
-                string playerToBeDelete =$"{lstPlayer[index - 1].FirstName }{lstPlayer[index - 1].LastName}";
-                Console.WriteLine("\nThis player has been selected to be deleted");
-                Console.WriteLine($"{lstPlayer[index - 1].FirstName} {lstPlayer[index - 1].LastName} from {lstPlayer[index - 1].Team}");
+                string playerToBeDelete =$"{lstPlayer[index - 1].FirstName } {lstPlayer[index - 1].LastName}";
+                Console.Write("\nThis player has been selected to be deleted: ");
+                Console.WriteLine($"<{lstPlayer[index - 1].FirstName} {lstPlayer[index - 1].LastName} from {lstPlayer[index - 1].Team}>");
                 string option = Prompt.GetString("\nAre you sure? (y/n) ").ToUpper();
                 if (option == "Y")
                 {
@@ -225,6 +229,26 @@ namespace Soccerplayerview
             } while (reportMenu != "X");
             
         }
+
+        public static void GoConverter()
+        {
+            Converter.ConverterTitle();
+            double param, stringToDouble;
+            string input = Prompt.GetString("Type the value to convert: ");
+            if (double.TryParse(input, out param))
+            {
+                stringToDouble = param;
+                Converter.DisplayConvertion(stringToDouble);
+            }
+            else
+            {
+                Console.WriteLine("Error convertin string to double: ");
+            }
+
+            Util.anyKeyToContinue();
+        }
+
+        
     }
 }
 

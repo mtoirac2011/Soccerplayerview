@@ -27,8 +27,8 @@ namespace Soccerplayerview
         {
             int age = 0;
             string fullName;
-            Console.WriteLine("\n          List of players with age");
-            Console.WriteLine("          --------------------------\n");
+            Console.WriteLine("\n          List of players (with Age calculated)");
+            Console.WriteLine("          ---------------\n");
             Console.WriteLine("Fullname               Country      Soccer Team        Age");
             Console.WriteLine("---------------------- ------------ ------------------ ---");
             foreach (var player in lPlayers)
@@ -93,7 +93,7 @@ namespace Soccerplayerview
 
             for (int i = 1; i < Lines.Length; i++)
             {
-                Console.WriteLine("Line number = " + i);
+                Console.WriteLine("\n=======>> Adding item number: " + i );
                 Console.WriteLine(Lines[i]);
 
                 string[] fields = Lines[i].Split(',');
@@ -118,7 +118,7 @@ namespace Soccerplayerview
                 }
                 Console.WriteLine("playerAux.Since value: " + playerAux.Since);
 
-                Console.WriteLine("===================>>");
+                //Console.Write("===================>>");
 
                 lstPlayerAux.Add(playerAux);
 

@@ -10,14 +10,16 @@ namespace Soccerplayerview
 			Console.Clear();
 			Console.WriteLine("╔════════════════════════════════════════════════╗");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║         ==    Main Menu   ==                   ║");
+			Console.WriteLine("║          ==    Main Menu   ==                  ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║             p - Players                        ║");
+			Console.WriteLine("║             p - Player Menu                    ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("║             q - Soccer quotes                  ║");
+			Console.WriteLine("║             q - Soccer quotes Menu             ║");
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             r - Report Menu                    ║");
 			Console.WriteLine("║                                                ║");
+			Console.WriteLine("│             c - Converter                      │");
+			Console.WriteLine("│                                                │");
 			Console.WriteLine("║             x - Exit                           ║");
 			Console.WriteLine("╚════════════════════════════════════════════════╝");
 		}

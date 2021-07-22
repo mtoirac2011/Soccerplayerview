@@ -40,7 +40,7 @@ namespace Soccerplayerview
 
         public static void anyKeyToContinue()
         {
-            Console.WriteLine($"\nAny key to continue...");
+            Console.Write($"\nAny key to continue...");
             Console.ReadKey();
         }
 
@@ -72,7 +72,7 @@ namespace Soccerplayerview
 
         }
 
-
+       
 
 
 

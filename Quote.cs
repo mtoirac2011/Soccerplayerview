@@ -16,7 +16,7 @@ namespace Soccerplayerview
                                 "I think sometimes the best training is to rest", "Success without honor is the greatest of failures",
                                 "There is nothing more dangerous than taking no chances", "Talent without working hard is nothing",
                                 "Enthusiasm is everything. It must be taut and vibrating like a guitar string",
-                                "If you are a goalkeeper, it doesn't matter what you save the ball with - if you keep it out, it's not a goal",
+                                "If you are a goalkeeper, it does not matter what you save the ball with, if you keep it out, it is not a goal",
                                 "In soccer, the worst blindness is only seeing the ball", "My mother thinks I am the best. And I was raised to always believe what my mother tells me"
             };
         }
@@ -47,7 +47,7 @@ namespace Soccerplayerview
             Console.WriteLine("───────────────────────────────");
             for (int i = 0; i < quotes.Length; i++)
             {
-                Console.WriteLine($"{quotes[i]}");
+                Console.WriteLine($"\"{quotes[i]}\"\n");
             }
 
         }
