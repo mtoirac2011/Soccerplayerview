@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PpGRCDjpFm21RSzBPp8n/Unbmcx3IabAXKYfC/HAzqziVkG676OX5w5S92y0RnWx8paDdRJrwoENlmmRyZKynQ==",
+  "dgSpecHash": "Zem4p8DIRQK8/PJlZ6hW6gwXsQFyRKKmbMQkQGTnpQFQ6EloKTClEabX9DtqQMDMN0XhHgJcpIZ/JeBeGgKY4w==",
   "success": true,
   "projectFilePath": "C:\\CODELOU\\Soccerplayerview\\Soccerplayerview.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\minar\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

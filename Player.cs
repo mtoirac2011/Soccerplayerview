@@ -40,8 +40,7 @@ namespace Soccerplayerview
                     age = age - 1;
 
                 Console.WriteLine(fullName.PadRight(22) + " "+ player.Country.PadRight(12) + " " + player.Team.PadRight(18) + "  " + age);
-                
-                //Console.WriteLine("\n--------------------------------------------------------------");
+
             }
         }
 

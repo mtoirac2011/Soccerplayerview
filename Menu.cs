@@ -18,8 +18,8 @@ namespace Soccerplayerview
 			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             r - Report Menu                    ║");
 			Console.WriteLine("║                                                ║");
-			Console.WriteLine("│             c - Converter                      │");
-			Console.WriteLine("│                                                │");
+			Console.WriteLine("║             c - Converter                      ║");
+			Console.WriteLine("║                                                ║");
 			Console.WriteLine("║             x - Exit                           ║");
 			Console.WriteLine("╚════════════════════════════════════════════════╝");
 		}
@@ -92,11 +92,15 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│           --  Report Menu --                   │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             p - List players                   │");
+			Console.WriteLine("│        p - List players                        │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             q - List soccer quotes             │");
+			Console.WriteLine("│        b - Best soccer start leyend            │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│             x - Exit                           │");
+			Console.WriteLine("│        o - Best soccer start leyend (by Dob)   │");
+			Console.WriteLine("│                                                │");
+			Console.WriteLine("│        q - List soccer quotes                  │");
+			Console.WriteLine("│                                                │");
+			Console.WriteLine("│        x - Exit                                │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
 		}
 	}

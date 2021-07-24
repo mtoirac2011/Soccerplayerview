@@ -1,0 +1,142 @@
+[
+    {
+	
+        "FirstName": "Edson Arantes",
+        "LastName": "do Nascimento",
+        "Nationality": "Brazilian",
+        "DOB": "10/23/1940",       
+    },
+    {
+	
+        "FirstName": "Diego Armando",
+        "LastName": "Maradona",
+        "Nationality": "Argentine",
+        "DOB": "10/30/1960"       
+    },
+    {
+	
+        "FirstName": "Hendrik Johannes",
+        "LastName": "Cruijff",
+        "Nationality": "Dutch",
+        "DOB": "04/25/1947"       
+    },
+    {
+	
+        "FirstName": "Cristiano Ronaldo",
+        "LastName": "dos Santos Aveiro",
+        "Nationality": "Portuguese",
+        "DOB": "02/05/1985"       
+    },
+    {
+	
+        "FirstName": "Alfredo",
+        "LastName": "Di Stefano",
+        "Nationality": "Italian",
+        "DOB": "07/04/1926"       
+    },
+    {
+	
+        "FirstName": "Manuel Francisco",
+        "LastName": "dos Santos",
+        "Nationality": "Brazilian",
+        "DOB": "10/28/1933"       
+    },
+    {
+	
+        "FirstName": "Lionel Andres",
+        "LastName": "Messi",
+        "Nationality": "Argentine",
+        "DOB": "06/24/1987"       
+    },
+    {
+	
+        "FirstName": "Arthur",
+        "LastName": "Friedenreich",
+        "Nationality": "Brazilian",
+        "DOB": "07/18/1892"       
+    },
+    {
+	
+        "FirstName": "Ferenc",
+        "LastName": "Puskas",
+        "Nationality": "Hungarian",
+        "DOB": "04/01/1927"       
+    },
+    {
+	
+        "FirstName": "Kunishige",
+        "LastName": "Kamamoto",
+        "Nationality": "Japanese",
+        "DOB": "04/15/1944"       
+    },
+    {
+	
+        "FirstName": "Franz",
+        "LastName": "Beckenbauer",
+        "Nationality": "German",
+        "DOB": "09/11/1945"       
+    },
+    {
+	
+        "FirstName": "Bobby",
+        "LastName": "Moore",
+        "Nationality": "English",
+        "DOB": "04/12/1941"       
+    },
+    {
+	
+        "FirstName": "Michel",
+        "LastName": "Platini",
+        "Nationality": "French",
+        "DOB": "06/21/1955"       
+    },
+    {
+	
+        "FirstName": "Eusébio",
+        "LastName": "da Silva Ferreira",
+        "Nationality": "Mozambican",
+        "DOB": "01/25/1942"       
+    },
+    {
+	
+        "FirstName": "Zinedine",
+        "LastName": "Zidane",
+        "Nationality": "French",
+        "DOB": "06/23/1972"       
+    },
+    {
+	
+        "FirstName": "Ronaldo Luís",
+        "LastName": "Nazário de Lima",
+        "Nationality": "Brazilian",
+        "DOB": "09/18/1976"       
+    },
+    {
+	
+        "FirstName": "Xavier",
+        "LastName": "Hernández Creus",
+        "Nationality": "Spanish",
+        "DOB": "01/25/1980"       
+    },
+    {
+	
+        "FirstName": "George",
+        "LastName": "Best",
+        "Nationality": "Northern Irish",
+        "DOB": "05/22/1946"       
+    },
+    {
+	
+        "FirstName": "Neymar da Silva",
+        "LastName": "Santos Junior",
+        "Nationality": "Brazilian",
+        "DOB": "02/05/1992"       
+    },
+    {
+	
+        "FirstName": "Lev Ivanovich",
+        "LastName": "Yashin",
+        "Nationality": "Soviet",
+        "DOB": "10/22/1929"       
+    } 
+]

@@ -215,9 +215,23 @@ namespace Soccerplayerview
                         
                         break;
 
+                    case "B":
+                        string fileName = Util.SetFileName("Soccerplayersallstar.json");
+                        List<Allstarjson> allStar =  Allstarjson.DeserializeAllStarPlayer(fileName);
+                        Allstarjson.DisplayAllLeyend(allStar, false);
+                        Util.anyKeyToContinue();
+                        break;
+
                     case "Q":
                         string[] quotes = Quote.InitializeQuotes();
                         Quote.DisplayQuotesWithFormat(quotes);
+                        Util.anyKeyToContinue();
+                        break;
+
+                    case "O":
+                        string file = Util.SetFileName("Soccerplayersallstar.json");
+                        List<Allstarjson> playerStar = Allstarjson.DeserializeAllStarPlayer(file);
+                        Allstarjson.DisplayAllLeyend(playerStar, true);
                         Util.anyKeyToContinue();
                         break;
 
