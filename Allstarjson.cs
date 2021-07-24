@@ -41,8 +41,8 @@ namespace Soccerplayerview
             
             var orderTitle = orderByName ? "(Ordered By Name)" :  "";
 
-            Console.WriteLine($"\n                   List of all star leyends {orderTitle}");
-            Console.WriteLine("                   ------------------------\n");
+            Console.WriteLine($"\n                   List of soccer leyends {orderTitle}");
+            Console.WriteLine("                   ----------------------\n");
             Console.WriteLine("Fullname                            Nationality      DOB");
             Console.WriteLine("----------------------------------- ---------------  ----------");
             if (!orderByName)
@@ -50,7 +50,7 @@ namespace Soccerplayerview
                 foreach (var player in lPlayers)
                 {
                     string fullName = player.firstName + " " + player.lastname;
-                    Console.WriteLine(fullName.PadRight(5) + " " + player.nationality.PadRight(15) + "  " + player.dob);
+                    Console.WriteLine(fullName.PadRight(35) + " " + player.nationality.PadRight(15) + "  " + player.dob);
 
                 }
 

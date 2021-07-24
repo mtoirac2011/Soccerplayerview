@@ -11,40 +11,43 @@ namespace Soccerplayerview
             string mainMenu;
             General.AlreadyCsv = false;
             General.LogFile = Util.SetFileName("Soccerlog.txt");
-            do
+            if (Util.CheckForEmail())
             {
-                mainMenu = "X";
-                Menu.MainMenu();
-                mainMenu = Prompt.GetString("Choose the option: ").ToUpper();
-
-                switch (mainMenu)
+                do
                 {
-                    case "P":
+                    mainMenu = "X";
+                    Menu.MainMenu();
+                    mainMenu = Prompt.GetString("Choose the option: ").ToUpper();
 
-                        GoPlayer();
-                        break;
+                    switch (mainMenu)
+                    {
+                        case "P":
 
-                    case "Q":
-                        GoQuote();
-                        break;
+                            GoPlayer();
+                            break;
 
-                    case "R":
-                        GoReport();
-                        break;
+                        case "Q":
+                            GoQuote();
+                            break;
 
-                    case "C":
-                        GoConverter();
+                        case "R":
+                            GoReport();
+                            break;
+
+                        case "C":
+                            GoConverter();
+
+                            break;
+
+                        default:
+                            Console.WriteLine("Closing the application...");
+                            break;
+                    }
+                    Console.Clear();
+
+                } while (mainMenu != "X");
+            }
                         
-                        break;
-
-                    default:
-                        Console.WriteLine("Closing the application...");
-                        break;
-                }
-                Console.Clear();
-
-            } while (mainMenu != "X");
-            
         }
 
         // Menu Player  //

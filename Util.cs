@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Soccerplayerview
 {
@@ -72,9 +73,45 @@ namespace Soccerplayerview
 
         }
 
-       
+       public static bool CheckForEmail()
+        {
+            Regex emailFormat = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                                            @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");            
+            bool emailIsValid;
+            int counter = 1;
+            do
+            {
+                Menu.WelcomeMenu();
 
+                Console.SetCursorPosition(55, 33);
+                Console.Write($"Enter a valid email format, ({counter} time): ");
+                string inputEmail = Console.ReadLine().Trim();
 
+                if (emailFormat.IsMatch(inputEmail))
+                {
+                    emailIsValid = true;
+                }else
+                {
+                    emailIsValid = false;
+                }
+                
+                if (counter == 3 && !emailIsValid)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(50, 20);
+                    Console.Write("Please, try later. Any key yo continue...");
+                    Console.ReadKey();
+                    break;
+                }
+                counter++;
+
+            } while (!emailIsValid);
+
+            return emailIsValid;
+        }
+
+        
 
 
         // /////////////////////////////////////

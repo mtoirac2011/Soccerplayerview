@@ -4,6 +4,7 @@ namespace Soccerplayerview
 {
     public class Menu
 	{
+
 		//Main Menu
 		public static void MainMenu()
 		{
@@ -102,6 +103,60 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│        x - Exit                                │");
 			Console.WriteLine("└────────────────────────────────────────────────┘");
+		}
+
+		public static void WelcomeMenu()
+        {
+			Console.Clear();
+			WriteAt("┌────────────────────────────────────────────────┐", 0, 1);
+			WriteAt("│                                                │", 0, 2);
+			WriteAt("│     Welcome to the Soccer Player View App      │", 0, 3);
+			WriteAt("│                                                │", 0, 4);
+			WriteAt("│     ───────────────────────────────────────    │", 0, 5);
+			WriteAt("│                                                │", 0, 6);
+			WriteAt("│        This is our login menu. You will        │", 0, 7);
+			WriteAt("│                                                │", 0, 8);
+			WriteAt("│        need to type a valid email format       │", 0, 9);
+			WriteAt("│                                                │", 0, 10);
+			WriteAt("│         in order to have access to this        │", 0, 11);
+			WriteAt("│                                                │", 0, 12);
+			WriteAt("│       application. You will have 3 chances     │", 0, 13);
+			WriteAt("│                                                │", 0, 14);
+			WriteAt("│                   Good luck!                   │", 0, 15);
+			WriteAt("└────────────────────────────────────────────────┘", 0, 16);
+
+			////sdfdf
+			//Console.WriteLine("┌────────────────────────────────────────────────┐");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│     Welcome to the Soccer Player View App      │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│     ───────────────────────────────────────    │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│        This is our login menu. You will        │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│        need to type a valid email format       │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│         in order to have access to this        │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│       application. You will have 3 chances     │");
+			//Console.WriteLine("│                                                │");
+			//Console.WriteLine("│                   Good luck!                   │");
+			//Console.WriteLine("└────────────────────────────────────────────────┘");
+
+		}
+
+		public static void WriteAt(string s, int x, int y)
+		{
+			try
+			{
+				Console.SetCursorPosition(50 + x, 15 + y);
+				Console.Write(s);
+			}
+			catch (ArgumentOutOfRangeException e)
+			{
+				Console.Clear();
+				Console.WriteLine(e.Message);
+			}
 		}
 	}
 }
