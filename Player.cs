@@ -40,7 +40,6 @@ namespace Soccerplayerview
                     age = age - 1;
 
                 Console.WriteLine(fullName.PadRight(22) + " "+ player.Country.PadRight(12) + " " + player.Team.PadRight(18) + "  " + age);
-
             }
         }
 
@@ -64,11 +63,9 @@ namespace Soccerplayerview
             else
             {
                 return 0;
-            }
-            
+            }   
         }
-
-        
+  
         public static List<Player> LoadListPlayer() 
         {
             
@@ -76,10 +73,6 @@ namespace Soccerplayerview
             DateTime since;
             string fileContent;
 
-            //string currentDir = Directory.GetCurrentDirectory();
-            //DirectoryInfo currentDirInfo = new DirectoryInfo(currentDir);
-
-            //var fileName = Path.Combine(currentDirInfo.FullName, "Soccerplayers.csv");
             string fileName = Util.SetFileName("Soccerplayers.csv");
 
             using (var reader = new StreamReader(fileName))
@@ -87,7 +80,6 @@ namespace Soccerplayerview
                  fileContent = reader.ReadToEnd();
             }
 
-            //string[] Lines = fileContent.Split(new char[] { '\r', '\n' });
             string[] Lines = System.IO.File.ReadAllLines(fileName);
 
             for (int i = 1; i < Lines.Length; i++)
@@ -117,20 +109,13 @@ namespace Soccerplayerview
                 }
                 Console.WriteLine("playerAux.Since value: " + playerAux.Since);
 
-                //Console.Write("===================>>");
-
                 lstPlayerAux.Add(playerAux);
-
-                Console.ReadKey();
             }
 
-            General.AlreadyCsv = true;
+            Util.AlreadyCsv = true;
             return lstPlayerAux;
         }
 
-        /// <summary>
-        /// Prompts user for player name and artist and adds a new player.
-        /// </summary>
         public static Player AddPlayer()
         {    
             Player manualPlayer = new Player();
@@ -155,8 +140,6 @@ namespace Soccerplayerview
             }
 
             return manualPlayer;
-        }
-
-        
+        }     
     }
 }

@@ -8,7 +8,6 @@ namespace Soccerplayerview
 {
     public class Quote
     {
-
         public static string[] InitializeQuotes()
         {
             return new string[] {
@@ -84,8 +83,6 @@ namespace Soccerplayerview
                 {
                     i = j;
                 }
-
-
             } while (i > quotes.Length || i < 1);
             return i;
         }

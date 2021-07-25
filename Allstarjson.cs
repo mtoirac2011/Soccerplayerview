@@ -6,7 +6,6 @@ using System.Linq;
 
 namespace Soccerplayerview
 {
-
     public class RootObject
     {
         public Allstarjson[] Allstarjson { get; set; }
@@ -21,8 +20,7 @@ namespace Soccerplayerview
         public string dob { get; set; }
 
         public static List<Allstarjson> DeserializeAllStarPlayer(string fileName)
-        {
-            
+        {           
             var allStarPlayers = new List<Allstarjson>();
             JsonSerializer serializer = new JsonSerializer();
 
@@ -33,7 +31,6 @@ namespace Soccerplayerview
             }
 
             return allStarPlayers;
-
         }
 
         public static void DisplayAllLeyend(List<Allstarjson> lPlayers, bool orderByName) 
@@ -65,9 +62,6 @@ namespace Soccerplayerview
 
                 }
             }
-
         }
-    }
-
-    
+    }   
 }

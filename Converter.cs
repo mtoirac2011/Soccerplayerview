@@ -46,7 +46,6 @@ namespace Soccerplayerview
             Console.WriteLine($"Meters to centimeters: {MeterToCm(value1)}\n");
 
             Console.WriteLine("───────────────────────────────");
-
         }
 
         public static double Truncate( double value, int decimales)
@@ -71,5 +70,4 @@ namespace Soccerplayerview
             Console.WriteLine("└────────────────────────────────────────────────┘");
         }
     }
-
 }

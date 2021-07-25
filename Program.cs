@@ -9,8 +9,9 @@ namespace Soccerplayerview
         static void Main(string[] args)
         {            
             string mainMenu;
-            General.AlreadyCsv = false;
-            General.LogFile = Util.SetFileName("Soccerlog.txt");
+            Util.AlreadyCsv = false;
+            Util.LogFile = Util.SetFileName("Soccerlog.txt");
+
             if (Util.CheckForEmail())
             {
                 do
@@ -56,7 +57,7 @@ namespace Soccerplayerview
             string playerMenu;
             do
             {
-                Menu.PlayerMenu(General.AlreadyCsv);
+                Menu.PlayerMenu(Util.AlreadyCsv);
                 playerMenu = Prompt.GetString("Choose the option: ").ToUpper();
 
                 switch (playerMenu)
@@ -84,7 +85,7 @@ namespace Soccerplayerview
             
             do
            {
-               Menu.PlayerAddMenu(General.AlreadyCsv);
+               Menu.PlayerAddMenu(Util.AlreadyCsv);
                playerAddMenu = Prompt.GetString("Choose the option: ").ToUpper();
                switch (playerAddMenu)
                { 
@@ -96,7 +97,7 @@ namespace Soccerplayerview
                             try
                             {
                                 lstPlayer.Add(Player.AddPlayer());
-                                Util.WriteInLog(General.LogFile, "A new player has been added");
+                                Util.WriteInLog(Util.LogFile, "A new player has been added");
                             }
                             catch (Exception ex)
                             {
@@ -109,7 +110,7 @@ namespace Soccerplayerview
                         break;
 
                     case "C":                     
-                        if (!General.AlreadyCsv)
+                        if (!Util.AlreadyCsv)
                         {
                             lstPlayer = Player.LoadListPlayer();
                             Player.DisplayPlayers(lstPlayer);
@@ -139,7 +140,7 @@ namespace Soccerplayerview
                     try
                     {
                         lstPlayer.RemoveAt(index - 1);
-                        Util.WriteInLog(General.LogFile, "A player has been successfully deleted");
+                        Util.WriteInLog(Util.LogFile, "A player has been successfully deleted");
                         Player.DisplayPlayers(lstPlayer);
                         Console.WriteLine($"\n{playerToBeDelete} successfully deleted. Any key to continue....");
                     }
@@ -189,7 +190,6 @@ namespace Soccerplayerview
                 }
                 
             } while (quoteMenu != "X");
-
         }
 
         // Menu Report  //
@@ -205,7 +205,7 @@ namespace Soccerplayerview
                 switch (reportMenu)
                 {
                     case "P":
-                        if (General.AlreadyCsv)
+                        if (Util.AlreadyCsv)
                         {
                             Player.DisplayPlayersWithFormat(lstPlayer);
                             Util.anyKeyToContinue();
@@ -240,11 +240,8 @@ namespace Soccerplayerview
 
                     default:
                         break;
-                }
-                
-
-            } while (reportMenu != "X");
-            
+                }                
+            } while (reportMenu != "X");           
         }
 
         public static void GoConverter()
@@ -263,9 +260,7 @@ namespace Soccerplayerview
             }
 
             Util.anyKeyToContinue();
-        }
-
-        
+        }        
     }
 }
 

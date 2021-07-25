@@ -7,7 +7,8 @@ namespace Soccerplayerview
 {
     class Util
     {
-        
+        public static bool AlreadyCsv { get; set; }
+        public static string LogFile { get; set; }
         public static string FileName()
         {
             string currentDir = Directory.GetCurrentDirectory();
@@ -53,7 +54,6 @@ namespace Soccerplayerview
 
             return fullname;
         }
-
         public static void WriteInLog(string fileNamePath, string msgToWrite)
         {
             DateTime date1 = DateTime.Now;
@@ -72,7 +72,6 @@ namespace Soccerplayerview
             }
 
         }
-
        public static bool CheckForEmail()
         {
             Regex emailFormat = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -84,8 +83,8 @@ namespace Soccerplayerview
             {
                 Menu.WelcomeMenu();
 
-                Console.SetCursorPosition(55, 33);
-                Console.Write($"Enter a valid email format, ({counter} time): ");
+                Console.SetCursorPosition(54, 33);
+                Console.Write($"Enter a valid email format, (chance #{counter}): ");
                 string inputEmail = Console.ReadLine().Trim();
 
                 if (emailFormat.IsMatch(inputEmail))
@@ -109,59 +108,6 @@ namespace Soccerplayerview
             } while (!emailIsValid);
 
             return emailIsValid;
-        }
-
-        
-
-
-        // /////////////////////////////////////
-        public static void AddRecord(string campo1, string campo2, string fileNamePath)
-        {
-            try
-            {
-                using (StreamWriter file = new StreamWriter(fileNamePath, true))
-                {
-                    file.WriteLine(campo1 + "," + campo2);
-                }
-            }
-            catch(Exception ex)
-            {
-                throw new ApplicationException("Error message ", ex);
-            }
-
-        }
-
-        public static string[] ReadRecord(string searchTerm, string filePath, int positionOfSearch)
-        {
-            positionOfSearch--;
-            string[] recordNotFound = {"Record not found"};
-            try
-            {
-                string[] lines = System.IO.File.ReadAllLines(filePath);
-
-                for (int i=0; i < lines.Length; i++)
-                {
-                    string[] fields = lines[i].Split(',');
-
-                    for (int f=0; f < fields.Length; f++)
-                    {
-                        Console.WriteLine("Realizar recorrido sub-lista");
-                    }
-                    Console.ReadKey();                    
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: ", ex );               
-            }
-            return recordNotFound;
-        }
-
-        public static string[] RecordMatches(string searchTerm, string[] record, int positionOfSearch)
-        {
-            string[] result = new string[3];
-
-            return result;
         }
     }
 }
