@@ -102,6 +102,7 @@ namespace Soccerplayerview
                             catch (Exception ex)
                             {
                                 Console.WriteLine("The player could not been added..." + ex);
+                                Util.WriteInLog(Util.LogFile, "The player could not been added...");
                             }
                             
                             Player.DisplayPlayers(lstPlayer);
@@ -112,9 +113,18 @@ namespace Soccerplayerview
                     case "C":                     
                         if (!Util.AlreadyCsv)
                         {
-                            lstPlayer = Player.LoadListPlayer();
+                            try
+                            {
+                                lstPlayer = Player.LoadListPlayer();
+                                Util.WriteInLog(Util.LogFile, "Players were loaded from CSV file...");
+                            }
+                            catch (Exception ex)
+                            {
+                                Util.WriteInLog(Util.LogFile, "Players were loaded from CSV file...");
+                                Console.WriteLine("Error loading players from CSV file..." + ex);
+                            }
+                            
                             Player.DisplayPlayers(lstPlayer);
-                            Console.ReadKey();
                         }
                         break;
 

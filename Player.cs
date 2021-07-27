@@ -21,6 +21,7 @@ namespace Soccerplayerview
                 Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
                 Console.WriteLine("\n--------------------------------------------------------------");
             }
+            Util.anyKeyToContinue();
         }
 
         public static void DisplayPlayersWithFormat(List<Player> lPlayers)
@@ -67,11 +68,11 @@ namespace Soccerplayerview
         }
   
         public static List<Player> LoadListPlayer() 
-        {
-            
+        {            
             List<Player> lstPlayerAux = new();
             DateTime since;
             string fileContent;
+            Util.AlreadyCsv = true;
 
             string fileName = Util.SetFileName("Soccerplayers.csv");
 
@@ -107,12 +108,17 @@ namespace Soccerplayerview
                 {
                     playerAux.Since = since;
                 }
+                else
+                {
+                    Util.AlreadyCsv = false;
+                    Console.WriteLine("Error converting string to DateTime...");
+                    break;
+                }
                 Console.WriteLine("playerAux.Since value: " + playerAux.Since);
 
                 lstPlayerAux.Add(playerAux);
             }
-
-            Util.AlreadyCsv = true;
+            
             return lstPlayerAux;
         }
 

@@ -117,7 +117,7 @@ namespace Soccerplayerview
 			WriteAt("│                                                │", 0, 8);
 			WriteAt("│        need to type a valid email format       │", 0, 9);
 			WriteAt("│                                                │", 0, 10);
-			WriteAt("│        in order to access to the App.          │", 0, 11);
+			WriteAt("│           in order to access the App.          │", 0, 11);
 			WriteAt("│                                                │", 0, 12);
 			WriteAt("│        You will have 3 chances to log in.      │", 0, 13);
 			WriteAt("│                                                │", 0, 14);
@@ -129,7 +129,7 @@ namespace Soccerplayerview
 		{
 			try
 			{
-				Console.SetCursorPosition(50 + x, 15 + y);
+				Console.SetCursorPosition(50 + x, 10 + y);
 				Console.Write(s);
 			}
 			catch (ArgumentOutOfRangeException e)

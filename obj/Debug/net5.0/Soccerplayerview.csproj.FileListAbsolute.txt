@@ -16,3 +16,6 @@ C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.pdb
 C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.genruntimeconfig.cache
 C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\CODELOU\Soccerplayerview\obj\Debug\net5.0\Soccerplayerview.csproj.CopyComplete
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerlog.txt
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayers.csv
+C:\CODELOU\Soccerplayerview\bin\Debug\net5.0\Soccerplayersallstar.json

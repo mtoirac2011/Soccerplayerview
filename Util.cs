@@ -83,8 +83,14 @@ namespace Soccerplayerview
             {
                 Menu.WelcomeMenu();
 
-                Console.SetCursorPosition(54, 33);
-                Console.Write($"Enter a valid email format, (chance #{counter}): ");
+                Console.SetCursorPosition(54, 28);
+                Console.WriteLine($"Enter a valid email format, (chance #{counter}): ");
+
+                Console.SetCursorPosition(54, 29);
+                Console.WriteLine("───────────────────────────────────────");
+
+                Console.SetCursorPosition(54, 31);
+                Console.Write("> ");
                 string inputEmail = Console.ReadLine().Trim();
 
                 if (emailFormat.IsMatch(inputEmail))
@@ -93,12 +99,13 @@ namespace Soccerplayerview
                 }else
                 {
                     emailIsValid = false;
+                    Util.WriteInLog(Util.LogFile, "Wrong email format...");
                 }
                 
                 if (counter == 3 && !emailIsValid)
                 {
                     Console.Clear();
-                    Console.SetCursorPosition(50, 20);
+                    Console.SetCursorPosition(50, 15);
                     Console.Write("Please, try later. Any key yo continue...");
                     Console.ReadKey();
                     break;
