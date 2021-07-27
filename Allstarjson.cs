@@ -14,10 +14,10 @@ namespace Soccerplayerview
     public class Allstarjson
     {
         
-        public string firstName { get; set; }
-        public string lastname { get; set; }
-        public string nationality { get; set; }
-        public string dob { get; set; }
+        public string FirstName { get; set; }
+        public string Lastname { get; set; }
+        public string Nationality { get; set; }
+        public string Dob { get; set; }
 
         public static List<Allstarjson> DeserializeAllStarPlayer(string fileName)
         {           
@@ -46,19 +46,19 @@ namespace Soccerplayerview
             {
                 foreach (var player in lPlayers)
                 {
-                    string fullName = player.firstName + " " + player.lastname;
-                    Console.WriteLine(fullName.PadRight(35) + " " + player.nationality.PadRight(15) + "  " + player.dob);
+                    string fullName = player.FirstName + " " + player.Lastname;
+                    Console.WriteLine(fullName.PadRight(35) + " " + player.Nationality.PadRight(15) + "  " + player.Dob);
 
                 }
-
             }
             else
             {
-                var lPlayerOderByName = lPlayers.OrderBy(p => p.firstName);
+                var lPlayerOderByName = lPlayers.OrderBy(p => p.FirstName);
+
                 foreach (var player in lPlayerOderByName)
                 {
-                    string fullName = player.firstName + " " + player.lastname;
-                    Console.WriteLine(fullName.PadRight(35) + " " + player.nationality.PadRight(15) + "  " + player.dob);
+                    string fullName = player.FirstName + " " + player.Lastname;
+                    Console.WriteLine(fullName.PadRight(35) + " " + player.Nationality.PadRight(15) + "  " + player.Dob);
 
                 }
             }

@@ -156,6 +156,7 @@ namespace Soccerplayerview
                     }
                     catch (Exception ex)
                     {
+                        Util.WriteInLog(Util.LogFile, "An error occurs deleting a player...");                        
                         Console.WriteLine($"\nError deleting {playerToBeDelete}" + ex + "/nAny key to continue...");
                     }
                 } 
