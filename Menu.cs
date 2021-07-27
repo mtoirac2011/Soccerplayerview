@@ -96,7 +96,7 @@ namespace Soccerplayerview
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│        b - Best soccer start leyend            │");
 			Console.WriteLine("│                                                │");
-			Console.WriteLine("│        o - Best soccer start leyend (by Dob)   │");
+			Console.WriteLine("│        o - Best soccer start leyend (by Name)  │");
 			Console.WriteLine("│                                                │");
 			Console.WriteLine("│        q - List soccer quotes                  │");
 			Console.WriteLine("│                                                │");
