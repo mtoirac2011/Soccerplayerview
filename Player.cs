@@ -10,7 +10,7 @@ namespace Soccerplayerview
     public class Player : Person
     {
         public string Team { get; set; }
-        public DateTime Since { get; set; }
+        public DateTime Dob { get; set; }
       
         public static void DisplayPlayers(List<Player> lPlayers)
         {
@@ -18,7 +18,7 @@ namespace Soccerplayerview
             Console.WriteLine("-----------------");
             foreach (var player in lPlayers)
             {
-                Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
+                Console.Write(player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Dob + "");
                 Console.WriteLine("\n--------------------------------------------------------------");
             }
             Util.anyKeyToContinue();
@@ -34,10 +34,10 @@ namespace Soccerplayerview
             Console.WriteLine("---------------------- ------------ ------------------ ---");
             foreach (var player in lPlayers)
             {
-                age = DateTime.Now.Year - player.Since.Year;
+                age = DateTime.Now.Year - player.Dob.Year;
                 fullName = player.FirstName + " " + player.LastName;
 
-                if (DateTime.Now.DayOfYear < player.Since.DayOfYear)
+                if (DateTime.Now.DayOfYear < player.Dob.DayOfYear)
                     age = age - 1;
 
                 Console.WriteLine(fullName.PadRight(22) + " "+ player.Country.PadRight(12) + " " + player.Team.PadRight(18) + "  " + age);
@@ -51,7 +51,7 @@ namespace Soccerplayerview
             Console.WriteLine("-----------------------------");
             foreach (var player in lPlayers)
             {
-                Console.Write("Item: <" + i + ">\n" + player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Since + "");
+                Console.Write("Item: <" + i + ">\n" + player.FirstName + " " + player.LastName + " " + player.Country + " " + player.Team + " " + player.Dob + "");
                 Console.WriteLine("\n--------------------------------------------------------------");
                 i++;    
             }
@@ -70,7 +70,7 @@ namespace Soccerplayerview
         public static List<Player> LoadListPlayer() 
         {            
             List<Player> lstPlayerAux = new();
-            DateTime since;
+            DateTime dob;
             string fileContent;
             Util.AlreadyCsv = true;
 
@@ -104,9 +104,9 @@ namespace Soccerplayerview
                 playerAux.Team = fields[3];
                 Console.WriteLine("playerAux.Team value: " + playerAux.Team);
 
-                if (DateTime.TryParse(fields[4], out since))
+                if (DateTime.TryParse(fields[4], out dob))
                 {
-                    playerAux.Since = since;
+                    playerAux.Dob = dob;
                 }
                 else
                 {
@@ -114,7 +114,7 @@ namespace Soccerplayerview
                     Console.WriteLine("Error converting string to DateTime...");
                     break;
                 }
-                Console.WriteLine("playerAux.Since value: " + playerAux.Since);
+                Console.WriteLine("playerAux.Dob value: " + playerAux.Dob);
 
                 lstPlayerAux.Add(playerAux);
             }
@@ -125,7 +125,7 @@ namespace Soccerplayerview
         public static Player AddPlayer()
         {    
             Player manualPlayer = new Player();
-            DateTime since;
+            DateTime Dob;
 
             Console.WriteLine("Type the following info for player");
             Console.WriteLine("==================================");
@@ -136,9 +136,9 @@ namespace Soccerplayerview
             manualPlayer.Team = Prompt.GetString("Soccer team: ");
             string input = Prompt.GetString("DOB mm/dd/yyyy: ");
 
-            if (DateTime.TryParse(input, out since))
+            if (DateTime.TryParse(input, out Dob))
             {
-                manualPlayer.Since = since;
+                manualPlayer.Dob = Dob;
             }
             else
             {

@@ -158,7 +158,6 @@ namespace Soccerplayerview
                     {
                         Console.WriteLine($"\nError deleting {playerToBeDelete}" + ex + "/nAny key to continue...");
                     }
-                    Console.ReadKey();
                 } 
             }
         }
